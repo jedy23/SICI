@@ -36,164 +36,38 @@
     <main role="main">
       <div class="album py-5 bg-light">
         <div class="container">
-          <div class="row">
-            <!-- Card -->
-            <div class="col-md-4">
-              <div class="card mb-4 box-shadow">
-                <a href="" data-toggle="modal" data-target="#exampleModal"><img class="card-img-top" src="img/hollowk.jpg" alt="404 not found"></a>
-                <div class="card-body">
-                  <h5 class="card-text">HOLLOW KNIGHT</h5>
-                  <p class="card-text">de Team Cherry<br>
-                    57 138 $ contribuido<br>
-                    180 % financiado
-                  </p>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-outline-secondary" data-toggle="modal" data-target="#exampleModal">Información</button>
-                      <!-- Modal -->
-                      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-lg" role="document">
-                          <div class="modal-content">
-                            <div class="modal-header">
-                              <h5 class="modal-title" id="exampleModalLabel">HOLLOW KNIGHT</h5>
-                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                              </button>
-                            </div>
+        <div class="row" data-bind="foreach : listaProyectos">
 
-                            <div class="modal-body">
-                              <h4>Descripción</h4>
-                              <div align="left" name="imagen_proyecto">
-
-                                <img src="img/hollowk.jpg" width="200" height="200" align="left" style="margin: 10px 10px 10px 0px;float: left; " />
-                              </div>
-
-                              <div class="Inform" >
-
-                                <p align="justify">A beautiful and mysterious 2D adventure through a surreal world of insects and heroes. A game for PC, Mac  and Linux.A beautiful and mysterious 2D adventure through a surreal world of insects and heroes. A game for PC, Mac  and Linux.A beautiful and mysterious 2D adventure through a surreal world of insects and heroes. A game for PC, Mac  and Linux.</FONT></p>
-
-
-								                <p><label for="inputdefault">Monto Solicitado:</label></p>
-                            	  <p><label for="inputdefault">Monto Recaudado:</label></p>
-                              	<p><label for="inputdefault">Monto Faltante:</label></p>
-                              	<p><label for="inputdefault">Dias Faltantes:</label></p>
-
-
-
-                                <div>
-
-                                  <p>Monto:</p>
-                                  <input id="cantidad" type="number">
-
-                                </div>
-
-                              </div>
-                            </div>
-                            	<div class="modal-footer" class="col-xs-3">
-                             <!-- <input class="form-control" id="inputdefault" type="text">        la barra de ingreso-->
-                              <button type="button" class="btn btn-primary" >Contribuir
-                              </button>
-
-                            </div>
-                          </div>
-                        </div>
+              <div class="col-md-4">
+                <div class="card mb-4 box-shadow">
+                  <a href="" data-toggle="modal" data-target="#exampleModal"><img class="card-img-top" data-bind="attr: {src: ImagenSrc}" alt="404 not found"></a>
+                  <div class="card-body">
+                    <h5 class="card-text" ><span data-bind="text: NombreProyecto"></span></h5>
+                    <p class="card-text"> 
+                      <span data-bind="text: DescripProyecto"> </span>
+                      <div data-bind="with: ResponsableObj">
+                        De : <span data-bind="text: Nombre"></span>
                       </div>
-                      <!-- End modal -->
+                      Requerido : <span data-bind="text: Requerido"> </span>$
+                      <br>
+                      contribuido : 00 $ 
+                      <br>
+                    </p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div class="btn-group">
+                        <button type="button" class="btn btn-sm btn-outline-secondary" data-toggle="modal" data-target="#exampleModal">Información</button>
+                        <!-- End modal -->
+                      </div>
+                      <small class="text-muted" data-bind="text : fechaValComite"> </small>
                     </div>
-                    <small class="text-muted">45 dias</small>
                   </div>
                 </div>
               </div>
-            </div>
-            <!-- End card -->
-            <!-- Card -->
-            <div class="col-md-4">
-              <div class="card mb-4 box-shadow">
-                <a href="" data-toggle="modal" data-target="#ModalCard2"><img class="card-img-top" src="img/proyecto.jpg" alt="404 not found"></a>
-                <div class="card-body">
-                  <h5 class="card-text">Titulo proyecto</h5>
-                  <p class="card-text">de NOMBRE AUTOR<br>
-                    DINERO $ contribuido<br>
-                    PORCENTAJE % financiado
-                  </p>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-outline-secondary" data-toggle="modal" data-target="#ModalCard2">Información</button>
-                      <!-- Modal -->
-                      <div class="modal fade" id="ModalCard2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-lg" role="document">
-                          <div class="modal-content">
-                            <div class="modal-header">
-                              <h5 class="modal-title" id="exampleModalLabel">Titulo del proyecto</h5>
-                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                              </button>
-                            </div>
-                            <div class="modal-body">
-                              <p>Descripcion del proyecto</p>
-                            </div>
-                            <div class="modal-footer" class="col-xs-3">
-                              <label for="inputdefault">Dinero a aportar</label>
-                              <input class="form-control" id="inputdefault" type="text">
-                              <button type="button" class="btn btn-primary">Apoyar proyecto</button>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <!-- End modal -->
-                    </div>
-                    <small class="text-muted">Tiempo faltante</small>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- End card -->
-            <!-- Card -->
-            <div class="col-md-4">
-              <div class="card mb-4 box-shadow">
-                <a href="" data-toggle="modal" data-target="#ModalCard3"><img class="card-img-top" src="img/proyecto.jpg" alt="404 not found"></a>
-                <div class="card-body">
-                  <h5 class="card-text">Titulo proyecto</h5>
-                  <p class="card-text">de NOMBRE AUTOR<br>
-                    DINERO $ contribuido<br>
-                    PORCENTAJE % financiado
-                  </p>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-outline-secondary" data-toggle="modal" data-target="#ModalCard3">Información</button>
-                      <!-- Modal -->
-                      <div class="modal fade" id="ModalCard3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-lg" role="document">
-                          <div class="modal-content">
-                            <div class="modal-header">
-                              <h5 class="modal-title" id="exampleModalLabel">Titulo del proyecto</h5>
-                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                              </button>
-                            </div>
-                            <div class="modal-body">
-                              <p>Descripcion del proyecto</p>
-                            </div>
-                            <div class="modal-footer" class="col-xs-3">
-                              <label for="inputdefault">Dinero a aportar</label>
-                              <input class="form-control" id="inputdefault" type="text">
-                              <button type="button" class="btn btn-primary">Apoyar proyecto</button>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <!-- End modal -->
-                    </div>
-                    <small class="text-muted">Tiempo faltante</small>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- End card -->
 
+            </div>
 
-          </div>
         </div>
+
       </div>
     </main>
 
@@ -218,7 +92,12 @@
     <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-storage.js"> </script>
     <script src="js/bootstrap.min.js" crossorigin="anonymous"></script>
+    <script src="js/knockout-3.4.2.js"></script>
     <script src="js/initializer.js"></script>
-    <script src="js/dbmanager.js"></script>
+    <script src="js/model.js"></script>
   </body>
+
+  <script>
+
+</script>
 </html>
