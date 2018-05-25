@@ -73,6 +73,34 @@
   //  var correoRef = ref.child("Correo");
 }
 
+
+ //// funcion valida tiempo proyecto
+ //// mendoza santos fco eder, aguilar jose carlos,miguel vicario
+function validatiempo(){
+ 
+ var stor =firebase.firestore();
+ var proyec = stor.child("proyectID");
+ var usuarios = stor.child("userID");
+ var m= {
+    listproy : ko.observableArray([])
+  }
+var hoy = new Date();
+var dd = hoy.getDate();
+var mm = hoy.getMonth()+1; 
+var yyyy = hoy.getFullYear();
+proyec.on('child_added', snap => {
+    snap.forEach( proyectosUsuario => {
+        var a = proyectosUsuario.val();
+        var h = parseInt(a.fechaValComite);
+        if((h+20000)>((yyyy)+(mm*10000))){
+          listproy.listaProyectos.push(a);
+          usr => {
+              m.listproy.push(a);
+              console.log(m.listproy());
+            }; 
+        }
+});
+
   /**proyecto.on('value', function(snap) {
     proyectos = snap.val();
     snap.forEach( function(child1){
