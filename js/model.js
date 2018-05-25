@@ -46,7 +46,32 @@
 
   });
 
+ //Creado por Eduardo castro
 
+  function notificacion() {
+  //Accedemos a nuestra base de datos mediante la URL de tu app
+  var db =firebase.firestore();
+  //var ref = new Firebase("https://adswsir.firebaseio.com/");
+  //Hacemos referencia a nuestro nodo del sensor Temp
+  //var comiteRef = ref.child("validarComite");
+  var proyecto = ref.child("proyectID");
+  //var inver = ref.child("inverID");
+  
+  proyecto.on("child_added", function(snapshot, prevChildKey) {
+  //recuperamos una captura del objeto leido
+  var t = snapshot.val();
+    //if (t.validarConfCorreo == 0) {   
+      db.collection("inverID").get.then((querySnapshot)=>{
+        querySnapshot.forEach((doc)=>{
+          console.log('${doc.Correo} => ${doc.Nombre}');
+        });
+      });
+    //}
+
+  });
+
+  //  var correoRef = ref.child("Correo");
+}
 
   /**proyecto.on('value', function(snap) {
     proyectos = snap.val();
