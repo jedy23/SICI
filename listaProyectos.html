@@ -40,7 +40,6 @@
             	<div class="col-md-4">
                 	<!-- Card -->
                 	<div class="card mb-4 box-shadow">
-                  	<!--<a href="" data-toggle="modal" data-target="#exampleModal"><img class="card-img-top" data-bind="attr: {src: ImagenSrc}" alt="404 not found"></a>--> <!-- ESTE ES EL CODIGO DE LA IMAGEN EN CARD (ELIMINAR) -->
                   		<div class="card-body">
                     		<h5 class="card-text" ><span data-bind="text: NombreProyecto"></span></h5>
                     		<p class="card-text"> 
@@ -56,12 +55,15 @@
                     		<div class="d-flex justify-content-between align-items-center">
                       			<div class="btn-group">
                         			<button type="button" class="btn btn-sm btn-outline-secondary" data-toggle="modal" data-target="#exampleModal">Información</button>
+                        			<!-- AL AGREGAR EL ELEMENTO MODAL SOLO SALE UNA CARD 
+                        				 NO SE A QUE SE DEBE, TAMBIEM NO OBTINE TODOS LOS DATOS DE LA BASE
+                        				 EL MODAL EL EL SIGUIENTE CODIGO QUE ESTA ENCERRADA ENTRE COMENTARIOS-->
                         			<!-- Modal -->
                         			<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                           				<div class="modal-dialog modal-dialog-centered" role="document">
                             				<div class="modal-content">
                               					<div class="modal-header">
-                                					<h5 class="modal-title" id="exampleModalLongTitle">Titulo del proyecto</h5>
+                                					<h5 class="modal-title" id="exampleModalLongTitle"><span data-bind="text: NombreProyecto"></span></h5>
                                 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                   						<span aria-hidden="true">&times;</span>
                                 					</button>
@@ -79,11 +81,21 @@
 												  	contribuido : 00 $ 
 												  </p>
                               					</div>
-                              					<div class="modal-footer">
-            										<label for="recipient-name" class="col-form-label">Dinero:</label>
-            										<input type="text" class="form-control" id="recipient-name">
-            										<button type="button" class="btn btn-primary">Aportar</button>
-                              					</div>
+                              					<div class="modal-body">
+												<form>
+												  <div class="form-row">
+												  <div class="form-group col-md-2">
+												    <label for="financiamientoCampo">Dinero:</label>
+												  </div>
+												  <div class="form-group col-md-8">
+												    <input type="number" class="form-control" id="financiamientoCampo" placeholder="Aportar">
+												  </div>
+												  <div class="form-group col-md-2">
+												    <button type="submit" class="btn btn-primary">Apoyar</button>
+												  </div>
+												</div>
+												</form>
+												</div>
                             				</div>
                           				</div>
                         			</div>
